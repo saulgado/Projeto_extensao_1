@@ -1,0 +1,20 @@
+ <h1>Cadastrando produto</h1>
+<form action="/clientes/adicionar" method="POST">
+  <div class="form-control">
+    <label for="nome">Qual o produto que deseja cadastrar?</label>
+    <input type="text" name="nome" placeholder="Ex: Coca-cola lata">
+  </div>
+  <div class="form-control">
+    <label for="numero_cell">Qual o valor que será cobrado em R$?</label>
+    <input type="text" name="numero_cell" placeholder="Ex: 3,50"></div>
+   <div class="form-control">
+    <label for="tipo_produto">Tipo do produto cadastrado:</label>
+    <select name="tipo_produto">
+        <option value="selecione">Selecione um produto</option>
+        <option value="marmita">Marmita</option>
+        <option value="bebida">Bebida</option>
+        <option value="pf">Prato feito</option>
+    </select>
+  </div>
+  <input type="submit" value="Cadastrar">
+</form>

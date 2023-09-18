@@ -1,0 +1,75 @@
+/* Reset de estilos para garantir a consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o formulário */
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Estilos para os campos de formulário */
+.form-control {
+    margin-bottom: 15px;
+
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: beige; 
+}
+
+input[type="submit"] {
+    background-color: #581d22;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #2f4538 ;
+}
+
+/* Adicionando as cores solicitadas */
+.form-control select {
+    background-color: beige; /* Bege para o campo de seleção */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+}
