@@ -6,6 +6,7 @@ const conn = require('./db/conn')
 //routes
 const clienteRoutes = require('./routes/clienteRoutes')
 const produtoRoutes = require('./routes/produtoRoutes')
+const loginRoutes = require('./routes/loginRoutes')
 
 app.engine('handlebars',exphbs.engine())
 app.set('view engine', 'handlebars')
@@ -24,6 +25,7 @@ app.use(express.static('public'))
 //Chama as rotas
 app.use('/produtos',produtoRoutes)
 app.use('/clientes',clienteRoutes)
+app.use('/login',loginRoutesRoutes)
 
 //roda o servidor se conseguir conectar ao bd
 conn.sync()
