@@ -17,7 +17,10 @@ module.exports = class ClienteController {
         }
 
         await Cliente.create(cliente)
-            .then(()=> {res.redirect('/clientes')})
+            .then(()=> {//res.redirect('/clientes')
+                
+                                        
+        })
             .catch((err)=> console.log('Erro ao cadastrar cliente'))
     }
 

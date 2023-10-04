@@ -25,7 +25,7 @@ app.use(express.static('public'))
 //Chama as rotas
 app.use('/produtos',produtoRoutes)
 app.use('/clientes',clienteRoutes)
-app.use('/login',loginRoutesRoutes)
+app.use('/login',loginRoutes)
 
 //roda o servidor se conseguir conectar ao bd
 conn.sync()
