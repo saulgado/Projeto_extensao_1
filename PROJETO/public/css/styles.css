@@ -73,3 +73,22 @@ input[type="submit"]:hover {
     font-size: 16px;
     padding: 10px;
 }
+
+
+
+table{
+    margin: 0 auto; 
+    margin-top: 30px;
+    width: 80%; 
+    max-width: 1000px;
+    background-color: #581d22;
+    color: white;
+    border-radius: 5px;
+    
+}
+
+tbody{
+    background-color: white;
+    color: black;
+}
+

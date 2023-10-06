@@ -11,16 +11,13 @@ module.exports = class ClienteController {
     static async cadastrarClientePost(req, res){
         const cliente = {
             nome : req.body.nome,
-            celular : req.body.celular,
+            celular : req.body.numero_cell,
             email : req.body.email,
             cpf : req.body.cpf
         }
-
+        console.log(cliente)
         await Cliente.create(cliente)
-            .then(()=> {//res.redirect('/clientes')
-                
-                                        
-        })
+            .then(()=> {res.redirect('/clientes')})
             .catch((err)=> console.log('Erro ao cadastrar cliente'))
     }
 
@@ -32,7 +29,7 @@ module.exports = class ClienteController {
             if (data.length === 0){
                 nenhumCliente = true
             }
-            res.render('clientes/todos',{clientes : data, nenhumCliente})
+            res.render('clientes/clientes',{clientes : data, nenhumCliente})
         }).catch((err) => console.log(err))
     }
 
