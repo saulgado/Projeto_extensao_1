@@ -1,0 +1,22 @@
+<h1>Editando o produto: {{produto.nome}}</h1>
+<form action="/produtos/editar" method="POST">
+  <input type="hidden" name="id" value={{produto.id}}>
+  <div class="form-control">
+    <label for="name">Nome do produto:</label>
+    <input type="text" name="nome" placeholder="Nome do produto" value={{produto.nome}}>
+  </div>
+    <div class="form-control">
+    <label for="valor">Qual o valor que será cobrado em R$?</label>
+    <input type="text" name="valor" value={{produto.valor}}></div>
+   <div class="form-control">
+  <div class="form-control">
+    <label for="tipo">Tipo do produto cadastrado:</label>
+    <select name="tipo" value="{{produto.tipo}}">
+        <option value="selecione">Selecione um produto</option>
+        <option value="marmita">Marmita</option>
+        <option value="bebida">Bebida</option>
+        <option value="pf">Prato feito</option>
+    </select>
+  </div>
+  <input type="submit" value="Salvar">
+</form>

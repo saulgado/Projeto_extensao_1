@@ -17,7 +17,7 @@ module.exports = class ProdutoController {
 
         await Produto.create(produto)
             .then(()=> {res.redirect('/produtos')})
-            .catch((err)=> console.log('Erro ao cadastrar produto'))
+            .catch((err)=> console.log('Erro ao cadastrar produto', err))
     }
 
     //Método que lista os produtos do banco
@@ -28,7 +28,7 @@ module.exports = class ProdutoController {
             if (data.length === 0){
                 nenhumProduto = true
             }
-            res.render('produtos/todos',{produtos : data, nenhumProduto})
+            res.render('produtos/todos_produtos',{produtos : data, nenhumProduto})
         }).catch((err) => console.log(err))
     }
 
@@ -47,7 +47,7 @@ module.exports = class ProdutoController {
 
         Produto.findOne({ where : {id : vid}, raw : true})
         .then((data) => {
-            res.render('produtos/editar', {produto : data})
+            res.render('produtos/editar_produtos', {produto : data})
         })
         .catch((err) => console.log(err))
     }

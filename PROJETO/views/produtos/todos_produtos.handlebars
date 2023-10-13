@@ -1,0 +1,20 @@
+<h1>Todos os Produtos:</h1>
+<ul class="produtos-lista">
+  {{#if nenhumaProduto}}
+    <p>Não há produtos cadastrados</p>
+  {{/if}}
+  {{#each produtos}}
+    <li>
+      <a href="/produtos/editar/{{this.id}}" class="nome">{{this.nome}}</a>
+      <span class="actions">
+        <a href="/produtos/editar/{{this.id}}"><i class="bi bi-pencil-square"></i></a>
+        <form action="/produtos/remover" method="POST">
+          <input type="hidden" name="id" value={{this.id}}>
+          <button type="submit">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </form>
+      </span>
+    </li>
+  {{/each}}
+</ul>
