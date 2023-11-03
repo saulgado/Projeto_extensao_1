@@ -79,11 +79,12 @@ input[type="submit"]:hover {
 table{
     margin: 0 auto; 
     margin-top: 30px;
-    width: 80%; 
+    width: 100%;
     max-width: 1000px;
     background-color: #581d22;
     color: white;
     border-radius: 5px;
+    
     
 }
 
@@ -204,3 +205,4 @@ h2 {
 #navbar ul li:nth-child(4) a:hover {
   background-color: #ffaa00;
 }
+
