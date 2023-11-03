@@ -1,0 +1,147 @@
+<h1>Lista de clientes</h1>
+
+
+<div class=" " id="lista" action="/clientes" method="GET">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">
+                    listagem de instrumentos
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody id="corpotabela">
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<script>
+    let response = null
+
+
+
+
+    async function listarTabela() {
+
+
+        try {
+            console.log('Código está sendo executado...');
+            response = await fetch('http://localhost:3000/clientes/JSON');
+        } catch (error) {
+            console.error('Erro ao buscar clientes do banco de dados:', error);
+        }
+
+        if (response) {
+
+            try {
+                console.log(response)
+                const data = await response.json();
+                console.log(data
+
+
+
+                )
+                const corpotabela = document.getElementById('corpotabela');
+                if (data.clientes.length > 0) {
+                    data.clientes.forEach(clientes => {
+                        const row = document.createElement('tr');
+                        const colunanome = document.createElement('td');
+                        colunanome.textContent = clientes.nome;
+                        const colunacelular = document.createElement('td');
+                        colunacelular.textContent = clientes.celular;
+                        const colunaemail = document.createElement('td');
+                        colunaemail.textContent = clientes.email;
+                        const colunacpf = document.createElement('td');
+                        colunacpf.textContent = clientes.cpf;
+                        const colunabotaoexcluir = document.createElement('button');
+                        const colunabotaoeditar = document.createElement('button');
+                        colunabotaoeditar.textContent = "Editar"
+                        colunabotaoexcluir.textContent = "Excluir"
+
+                        colunabotaoexcluir.addEventListener('click', () => {
+                            excluirCliente(clientes.id);
+                        });
+
+                        colunabotaoeditar.addEventListener('click', () => {
+                            editarCliente(clientes.id);
+                        });
+                        row.appendChild(colunanome);
+                        row.appendChild(colunacelular);
+                        row.appendChild(colunaemail);
+                        row.appendChild(colunacpf);
+                        row.appendChild(colunabotaoexcluir);
+                        row.appendChild(colunabotaoeditar);
+                        corpotabela.appendChild(row);
+                    });
+                } else {
+                    // Caso não haja clientes
+                    const noDataMessage = document.createElement('p');
+                    noDataMessage.textContent = 'Nenhum cliente encontrado.';
+                    corpotabela.appendChild(noDataMessage);
+                }
+            } catch (error) {
+                console.log(`Erro ao renderizar o JSON de clientes: ${error}`)
+            }
+
+        } else {
+            console.error('Busca por clientes deu errado.');
+        }
+
+    }
+
+
+
+    listarTabela()
+
+
+
+    function excluirCliente(id) {
+        try {
+            response = fetch('http://localhost:3000/clientes/remover', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id })
+            })
+        } catch (error) {
+            console.error('Erro ao excluir cliente do banco de dados:', error);
+        }
+    }
+
+function editarCliente(id) {
+    window.location.href = `/clientes/editar/${id}`
+}
+
+
+
+
+
+
+
+
+
+</script>
