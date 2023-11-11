@@ -41,7 +41,7 @@ module.exports = class ClienteController {
         const id = req.body.id
         console.log(req)
 
-        return res.status(200).json(await Instrumentos.destroy({ where: { id } })) && res.render('clientes/cd_cliente')
+        return res.status(200).json(await Cliente.destroy({ where: { id } })) && res.render('clientes/cd_cliente')
     }
 
     //Método para apresentar o formulário de alteração de um produto
