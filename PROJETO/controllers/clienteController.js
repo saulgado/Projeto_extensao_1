@@ -40,8 +40,7 @@ module.exports = class ClienteController {
     static async removeCliente(req, res) {
         const id = req.body.id
         console.log(req)
-
-        return res.status(200).json(await Cliente.destroy({ where: { id } })) && res.render('clientes/cd_cliente')
+        res.status(200).json(await Cliente.destroy({ where: { id } }))
     }
 
     //Método para apresentar o formulário de alteração de um produto

@@ -1,0 +1,20 @@
+<h1>Login</h1>
+<form action="/login/editar" method="POST">
+  <div class="form-control">
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Digite o nome do seu login">
+  </div>
+  <div class="form-control">
+    <label for="password">Senha:</label>
+    <input type="text" name="password" placeholder="Digite aqui sua senha">
+  </div>
+  <div class="form-control">
+    <label for="rol">Hierarquia:</label>
+    <input type="radio" name="rol" value="admin"> 
+    admin
+    <input type="radio" name="rol" value="user"> 
+    user
+  </div>
+
+  <input type="submit" value="Editar">
+</form>
