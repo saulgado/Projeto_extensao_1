@@ -1,0 +1,36 @@
+{{!-- edit.handlebars --}}
+
+{{!-- Seção de conteúdo da página --}}
+<div class="container mt-4 w-80">
+    <h1 class="mb-4">Editar Cliente</h1>
+    <form id="editClienteForm" enctype="multipart/form-data" method="post">
+        <div class="form-group mb-3">
+            <label for="editNome">Nome</label>
+            <input type="text" class="form-control" id="editNome" name="nome" value="{{cliente.nome}}" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="editCelular">Celular</label>
+            <input type="text" class="form-control" id="editCelular" name="celular" value="{{cliente.celular}}" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="editEmail">Email</label>
+            <input type="text" class="form-control" id="editEmail" name="email" value="{{cliente.email}}" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="editCpf">CPF</label>
+            <input type="text" class="form-control" id="editCpf" name="cpf" value="{{cliente.cpf}}" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="editOrdem">Ordem</label>
+            <input type="number" class="form-control" id="editOrdem" name="ordem" value="{{cliente.ordem}}" required>
+        </div>
+        <!-- Campo oculto para armazenar o ID do curso -->
+        <input type="hidden" id="editClienteId" name="id" value="{{cliente.id}}">
+        <a  href="../clientes/" class="btn btn-secondary" id="cancelEditCliente"><i class="bi bi-x-circle"></i> Cancelar</a>
+        <button  type="button" class="btn btn-primary" id="saveEditCliente" onclick="UpdateClienteClick(event)"><i class="bi bi-check-circle"></i> Salvar</button>
+    </form>
+</div>
+
+
+<!-- Scripts do formulário curso -->
+<script src="../js/clienteScripts.js"></script> 
