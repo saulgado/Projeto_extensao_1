@@ -160,9 +160,10 @@ function CreateClienteClick(event) {
                 });
             })
             .catch(error => {
-                console.error(error);
-                // Lida com erros, se necessário
-            });
+                console.error('Erro Axios:', error);
+                console.error('Detalhes da Resposta:', error.response.data); // Adicione esta linha para logar detalhes da resposta
+                // Exiba mensagens de erro ou tome medidas adequadas, dependendo do erro
+              });
 
     }
 };
