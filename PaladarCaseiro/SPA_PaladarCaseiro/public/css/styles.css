@@ -2,7 +2,7 @@
 
 /* Estilo para o overlay do modal */
 .modal.show {
-    background-color:  rgba(0, 0, 0, 0.5);
+    background-color:  rgba(44, 33, 33, 0.5);
 }
 
 /* definindo variáveis para cores */
@@ -22,12 +22,12 @@
 
 /*Dark mode*/
 :root{
-    --primary: #313866;
-    --secondary: #00ABBD;
-    --success: #964EC2;
-    --info: #A1C7E0;
-    --warning: #00ABBD;
-    --danger: #313866;
+    --primary: #581d22;
+    --secondary: beige;
+    --success: #86222a;
+    --info: #ccc;
+    --warning: beige;
+    --danger: #581d22;
     --white: #FFF;
 }
 
